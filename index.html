@@ -1,12 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IR A LA PÁGINA PRINCIPAL</title>
-    <button onclick="paginaprincipal">Continuar</button>
+  <meta charset="UTF-8">
+  <title>PolloGames</title>
+  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script>
+    window.onload = function () {
+      firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+          window.location.href = "html/main.html";
+        } else {
+          window.location.href = "html/login.html";
+        }
+      });
+    };
+  </script>
 </head>
-<body>
-    <button onclick="paginaprincipal">Continuar</button>
+<body style="background:#000; color:#00eaff; font-family:'Orbitron', sans-serif; text-align:center; padding-top:20%;">
+  <h1>Redireccionando a PolloGames...</h1>
 </body>
 </html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro - PolloGames</title>
+  <link rel="stylesheet" href="../css/register.css">
+  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth-compat.js"></script>
+  <script src="../js/firebase-config.js" defer></script>
+  <script src="../js/register.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Registro</h1>
+    <form id="registerForm">
+      <input type="text" id="username" placeholder="Nombre de usuario" required />
+      <input type="email" id="email" placeholder="Correo electrónico" required />
+      <input type="password" id="password" placeholder="Contraseña" required />
+      <div style="text-align: center;"><button type="submit">Registrarse</button></div>
+      <a href="login.html">Ya tengo cuenta</a>
+      <p id="error" style="color:red;"></p>
+    </form>
+  </div>
+</body>
+</html>

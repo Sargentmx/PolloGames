@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - PolloGames</title>
+  <link rel="stylesheet" href="../css/login.css">
+  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth-compat.js"></script>
+  <script src="../js/firebase-config.js" defer></script>
+  <script src="../js/login.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Iniciar Sesión</h1>
+    <form id="loginForm">
+      <input type="email" id="email" placeholder="Correo electrónico" required />
+      <input type="password" id="password" placeholder="Contraseña" required />
+      <div style="text-align: center;"><button type="submit">Entrar</button></div>
+      <a href="register.html">¿No tienes cuenta? Regístrate</a>
+      <p id="error" style="color:red;"></p>
+    </form>
+  </div>
+</body>
+</html>
