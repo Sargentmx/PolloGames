@@ -2,13 +2,62 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Juegos - PolloGames</title>
-  <link rel="stylesheet" href="../css/games.css">
+  <title>Juegos de Prueba - PolloGames</title>
+  <link rel="stylesheet" href="../css/main.css"> 
+  <link rel="icon" href="../img/logopollo.ico" type="image/x-icon">
+  
+  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore-compat.js"></script>
+  <script src="../js/firebase-config.js" defer></script>
+  <script src="../js/user-comp.js"></script>
+  <script src="../js/catalog.js" defer></script>
+  <script src="../js/video.js" defer></script>
 </head>
 <body>
-  <div class="container">
-    <h1>Juegos</h1>
-    <p>...</p>
+
+<header class="top-header">
+  <div class="logo">
+    <img src="../assets/img/logopollo.jpg" alt="LogoPolloGames">
   </div>
+  <nav>
+    <ul> 
+      <li><a href="games.html">Juegos de Prueba</a></li>
+      <li><a href="infoempresa.html">Acerca de Nosotros</a></li>
+      <li><a href="contact.html">Contacto</a></li>
+      <li class="profile-link"><a href="user.html" aria-label="Perfil de usuario"></a></li>
+  </ul>
+  </nav>
+</header>
+
+<div class="main-content">
+  <h1>Juegos de Prueba</h1>
+
+  <div class="games-grid">
+
+    <div class="game-card" data-game-id="cod-ghosts">
+      <div class="media-container" id="contenedor-vid1">
+        <img src="../img/codLogo.png" alt="Cod" class="game-image">
+        <video class="game-video" loop muted playsinline preload="metadata" id="vid1">
+          <source src="../img/codVod.mp4" type="video/mp4">
+          Tu navegador no soporta videos HTML5.
+        </video>
+      </div>
+      <h3>Cod Ghosts</h3>
+      <p>Shoot and loot.</p>
+      <div class="catalog-rating">
+        <span class="rating-label">Rating:</span> 
+        <span class="avg-rating-value">?</span> / 5 
+        <span class="rating-count">(? votos)</span>
+      </div>
+      <a href="../html/gameIn.html?gameId=cod-ghosts" class="play-button">Jugar Ahora</a> 
+    </div>
+
+    <!-- Puedes duplicar este bloque para más juegos -->
+    
+  </div>
+
+</div>
+
 </body>
 </html>

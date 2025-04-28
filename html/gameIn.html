@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Juego - PolloGames</title>
+    <link rel="stylesheet" href="../css/main.css"> 
+    <link rel="icon" href="../img/logopollo.ico" type="image/x-icon">
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore-compat.js"></script>
+    <script src="../js/firebase-config.js"></script>
+    <script src="../js/user-comp.js"></script>
+    <script src="../js/feedback.js" defer></script>
+</head>
+<body>
+
+<header class="top-header">
+    <div class="logo">
+        <img src="../assets/img/logopollo.jpg" alt="LogoPolloGames">
+    </div>
+    <nav>
+        <ul> 
+            <li><a href="games.html">Juegos de Prueba</a></li>
+            <li><a href="infoempresa.html">Acerca de Nosotros</a></li>
+            <li><a href="contact.html">Contacto</a></li>
+            <li class="profile-link"><a href="user.html" aria-label="Perfil de usuario"></a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="main-content">
+
+    <h2 style="color:#00eaff;">Nombre del Juego</h2>
+    <div id="unity-container" class="unity-desktop" style="width: 720px; height: 450px; margin: 20px auto;"> 
+        <canvas id="unity-canvas" style="width: 100%; height: 100%; background: #231F20"></canvas> 
+        <div id="unity-loading-bar" class="unity-loading-bar">
+            <div class="unity-logo"></div>
+            <div class="unity-progress-bar-empty">
+                <div class="unity-progress-bar-full"></div>
+            </div>
+        </div>
+        <div id="unity-warning"></div>
+    </div>
+
+    <hr style="border-color: #00bcd4; margin: 30px 0;">
+
+    <div id="feedback-section">
+        <p>¡Gracias por jugar!</p>
+        <h2>Deja tu Opinión</h2>
+
+        <div class="rating-stars">
+            <span>Calificación:</span>
+            <span class="star" data-value="1">&#9734;</span> 
+            <span class="star" data-value="2">&#9734;</span>
+            <span class="star" data-value="3">&#9734;</span>
+            <span class="star" data-value="4">&#9734;</span>
+            <span class="star" data-value="5">&#9734;</span>
+            <input type="hidden" id="rating-value" value="0"> 
+        </div>
+
+        <textarea id="comment-input" placeholder="Escribe tu comentario aquí..." rows="3" cols="25"></textarea>
+
+        <button id="send-feedback-btn">Enviar Comentario</button>
+
+        <p id="feedback-message" style="margin-top: 10px;"></p> 
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -2,13 +2,87 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Usuario - PolloGames</title>
+  <title>Perfil de Usuario</title>
   <link rel="stylesheet" href="../css/user.css">
+  <link rel="icon" href="../img/logopollo.ico" type="image/x-icon">
+  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth-compat.js"></script>
+  <script src="../js/firebase-config.js" defer></script>
+  <script src="../js/user-comp.js"></script>
+  <script src="../js/user.js" defer></script>
 </head>
 <body>
+  <header class="top-header">
+    <div class="logo">
+        <img src="/assets/img/logopollo.jpg" alt="LogoPolloGames">
+    </div>
+    <nav>
+      <ul> 
+        <li><a href="games.html">Juegos de Prueba</a></li>
+        <li><a href="infoempresa.html">Acerca de Nosotros</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+        <li class="profile-link"><a href="user.html" aria-label="Perfil de usuario"></a></li>
+      </ul>
+    </nav>
+  </header>
+  
   <div class="container">
-    <h1>Usuario</h1>
-    <p>...</p>
+    <h1>Perfil de Usuario</h1>
+    <p><strong>Nombre:</strong> <span id="displayName"></span></p>
+    <p><strong>Correo:</strong> <span id="email"></span></p>
+    <p><strong>Verificado:</strong> <span id="verified"></span></p>
+
+    <h3>Actualizar datos</h3>
+    
+    <!-- Botones para cada opción -->
+    <button id="modifyUsernameBtn">Modificar Nombre de Usuario</button>
+    <button id="modifyEmailBtn">Modificar Correo Electrónico</button>
+    <button id="modifyPasswordBtn">Modificar Contraseña</button>
+
+    <!-- Modal para ingresar la contraseña actual -->
+    <div id="passwordModal" class="modal">
+      <div class="modal-content">
+        <h3>Ingrese su contraseña actual</h3>
+        <input type="password" id="passwordModalInput" placeholder="Contraseña actual" />
+        <button id="submitPasswordModalBtn">Confirmar</button>
+        <button id="cancelPasswordModalBtn">Cancelar</button>
+      </div>
+    </div>
+
+    <!-- Modal para modificar el nombre de usuario -->
+    <div id="nameModal" class="modal">
+      <div class="modal-content">
+        <h3>Ingrese el nuevo nombre de usuario</h3>
+        <input type="text" id="newNameInput" placeholder="Nuevo nombre de usuario" />
+        <button id="submitNameModalBtn">Confirmar</button>
+        <button id="cancelNameModalBtn">Cancelar</button>
+      </div>
+    </div>
+
+    <!-- Modal para modificar el correo electrónico -->
+    <div id="emailModal" class="modal">
+      <div class="modal-content">
+        <h3>Ingrese el nuevo correo electrónico</h3>
+        <input type="email" id="newEmailInput" placeholder="Nuevo correo electrónico" />
+        <button id="submitEmailModalBtn">Confirmar</button>
+        <button id="cancelEmailModalBtn">Cancelar</button>
+      </div>
+    </div>
+
+    <!-- Modal para modificar la contraseña -->
+    <div id="passwordChangeModal" class="modal">
+      <div class="modal-content">
+        <h3>Ingrese la nueva contraseña</h3>
+        <input type="password" id="newPasswordInput" placeholder="Nueva contraseña" />
+        <button id="submitPasswordChangeModalBtn">Confirmar</button>
+        <button id="cancelPasswordChangeModalBtn">Cancelar</button>
+      </div>
+    </div>
+
+    <button id="logoutBtn">Cerrar sesión</button>
+    <button id="activate2FABtn">Activar verificación en dos pasos</button>
+
+    <p id="error" style="color:red;"></p>
   </div>
 </body>
 </html>

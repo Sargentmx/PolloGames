@@ -4,21 +4,33 @@
   <meta charset="UTF-8">
   <title>Login - PolloGames</title>
   <link rel="stylesheet" href="../css/login.css">
+  <link rel="icon" href="../img/logopollo.ico" type="image/x-icon">
   <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth-compat.js"></script>
-  <script src="../js/firebase-config.js" defer></script>
+  <script src="../js/firebase-config.js"></script>
   <script src="../js/login.js" defer></script>
 </head>
 <body>
+  <div id="logo">
+    <img style="max-width: 100%; height: auto;" src="../assets/img/pollogamesletters.png">
+  </div>
   <div class="container">
     <h1>Iniciar Sesión</h1>
     <form id="loginForm">
-      <input type="email" id="email" placeholder="Correo electrónico" required />
+      <input type="email" id="email" placeholder="Correo electrónico o nombre de usuario" required />
       <input type="password" id="password" placeholder="Contraseña" required />
       <div style="text-align: center;"><button type="submit">Entrar</button></div>
-      <a href="register.html">¿No tienes cuenta? Regístrate</a>
+      <br>
+      <div style="text-align: center;"><label>ó</label></div>
+      <br>
+      <div style="text-align: center;"><button type="button" id="googleLogin">Google Login</button></div>
       <p id="error" style="color:red;"></p>
+      <br>
+      <a href="reset-password.html">¿Olvidaste tu contraseña?</a>
+      <br>
+      <a href="register.html">¿No tienes cuenta? Regístrate</a>
     </form>
   </div>
+  <div id="recaptcha-container"></div>
 </body>
 </html>

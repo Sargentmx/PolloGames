@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Activar Verificación en 2 Pasos</title>
+  <link rel="stylesheet" href="../css/user.css">
+  <link rel="icon" href="../img/logopollo.ico" type="image/x-icon">
+  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth-compat.js"></script>
+  <script src="../js/user-comp.js"></script>
+  <script src="../js/firebase-config.js" defer></script>
+  <script src="../js/2fa.js" defer></script>
+</head>
+<body>
+  <header class="top-header">
+    <div class="logo">
+        <img src="../assets/img/logopollo.jpg" alt="LogoPolloGames">
+    </div>
+    <nav>
+        <ul> 
+            <li><a href="games.html">Juegos de Prueba</a></li>
+            <li><a href="infoempresa.html">Acerca de Nosotros</a></li>
+            <li><a href="contact.html">Contacto</a></li>
+            <li class="profile-link"><a href="user.html" aria-label="Perfil de usuario"></a></li>
+        </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>Activar Verificación en 2 Pasos</h1>
+    <div style="text-align: center;">
+      <button id="activate2FABtn">Activar 2FA</button>
+    </div>
+    <!-- Modal para ingresar número de teléfono -->
+    <div id="phoneModal" class="modal">
+      <div class="modal-content">
+        <h3>Ingresa tu número de teléfono</h3>
+        <input type="text" id="phoneNumber" placeholder="Número de teléfono (con +52...)" />
+        <div id="recaptcha-container"></div>
+        <button id="sendCodeBtn">Enviar código</button>
+        <button id="cancelPhoneModalBtn">Cancelar</button>
+      </div>
+    </div>
+
+    <!-- Modal para ingresar el código recibido -->
+    <div id="verificationModal" class="modal">
+      <div class="modal-content">
+        <h3>Ingresa el código recibido</h3>
+        <input type="text" id="codigo" placeholder="Código recibido" />
+        <button id="confirmCodeBtn">Confirmar código</button>
+        <button id="cancelVerificationModalBtn">Cancelar</button>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+      <a href="user.html">Regresar al perfil de usuario</a>
+    <p id="error" style="color:red;"></p>
+  </div>
+</body>
+</html>

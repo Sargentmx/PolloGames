@@ -5,6 +5,38 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "headers": [
+      {
+        "source": "/juegosWebGL/rocketGame/Build/**",
+        "headers": [
+          { "key": "Cache-Control", "value": "public, max-age=3600" }
+        ]
+      },
+      {
+        "source": "**/*.data",
+        "headers": [
+          { "key": "Content-Type", "value": "application/octet-stream" }
+        ]
+      },
+      {
+        "source": "**/*.wasm",
+        "headers": [
+          { "key": "Content-Type", "value": "application/wasm" }
+        ]
+      },
+      {
+        "source": "**/*.gz",
+        "headers": [
+          { "key": "Content-Encoding", "value": "gzip" }
+        ]
+      },
+      {
+        "source": "**/*.br",
+        "headers": [
+          { "key": "Content-Encoding", "value": "br" }
+        ]
+      }
     ]
   }
 }

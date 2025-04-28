@@ -12,6 +12,14 @@ body {
   height: 100vh;
 }
 
+#logo {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
 .container {
   background-color: #0d0d0d;
   border: 2px solid #00bcd4;
@@ -68,4 +76,22 @@ a {
   text-align: center;
   display: block;
   margin-top: 10px;
+}
+
+/*Contenedor de barra de nav*/
+.top-header {
+  display: flex; 
+  align-items: center; 
+  background-color: #0d0d0d; 
+  padding: 5px 20px; 
+  border-bottom: 2px solid #00bcd4; 
+  box-shadow: 0 2px 8px rgba(0, 234, 255, 0.4); 
+  height: 80px; 
+}
+
+
+.logo {
+  
+  padding-right: 20px; 
+  flex-shrink: 0; 
 }

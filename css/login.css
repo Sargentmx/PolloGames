@@ -12,7 +12,16 @@ body {
   height: 100vh;
 }
 
+#logo {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
 .container {
+  position: absolute;
   background-color: #0d0d0d;
   border: 2px solid #00bcd4;
   border-radius: 16px;

@@ -2,13 +2,68 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Contacto - PolloGames</title>
-  <link rel="stylesheet" href="../css/contact.css">
+  <title>PolloGames - Acerca de nosotros</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="icon" href="../img/logopollo.ico" type="image/x-icon">
+  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth-compat.js"></script>
+  <script src="../js/user-comp.js"></script>
+  <script src="../js/firebase-config.js"></script>
 </head>
 <body>
-  <div class="container">
-    <h1>Contacto</h1>
-    <p>...</p>
+    <header class="top-header">
+        <div class="logo">
+          <img src="../assets/img/logopollo.jpg" alt="LogoPolloGames">
+        </div>
+        <nav>
+          <ul> 
+            <li><a href="games.html">Juegos de Prueba</a></li>
+            <li><a href="infoempresa.html">Acerca de Nosotros</a></li>
+            <li><a href="contact.html">Contacto</a></li>
+            <li class="profile-link"><a href="user.html" aria-label="Perfil de usuario"></a></li>
+        </ul>
+        </nav>
+    </header>
+    <div class="main-content">
+      <h1>Contáctanos</h1>
+      <p>Estamos aquí para ayudarte. Ponte en contacto con nosotros a través de los siguientes medios:</p>
+
+      <div class="contact-info">
+          <h2>Información de Contacto</h2>
+          <div id="correos">
+            <strong>Correos Electrónicos:</strong>
+            <a href="mailto:adrian.ru04@gmail.com">adrian.ru04@gmail.com</a>
+            <a href="mailto:alan.perez5522@alumnos.udg.mx">alan.perez5522@alumnos.udg.mx</a>
+          </div>
+              
+          <p>
+              <strong>Soporte Técnico:</strong>
+              <a href="mailto:soporte@pollogames.com">soporte@pollogames.com</a>
+          </p>
+          <p>
+              <strong>Teléfono:</strong>
+              +52 33 1979 4794
+          </p>
+      </div>
+
+      <div class="location-info">
+          <h2>Nuestra Ubicación</h2>
+          <p>Visítanos en nuestras oficinas:</p>
+           <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3733.3615169682084!2d-103.32802462807132!3d20.654866100521918!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428b23a9bbba80d%3A0xdacdb7fd592feb90!2sCentro%20Universitario%20de%20Ciencias%20Exactas%20e%20Ingenier%C3%ADas%20(CUCEI)!5e0!3m2!1ses!2smx!4v1745796613655!5m2!1ses!2smx" 
+            width="600" 
+            height="450" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+              </div>
+          <p>
+              Blvd. Gral. Marcelino García Barragán 1421, Olímpica, 44430 Guadalajara, Jal.
+          </p>
+      </div>
+
   </div>
-</body>
-</html>
+
+    

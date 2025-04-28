@@ -1,14 +1,54 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Sobre Nosotros - PolloGames</title>
-  <link rel="stylesheet" href="../css/infoempresa.css">
+    <meta charset="UTF-8">
+    <title>PolloGames - Acerca de nosotros</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="icon" href="../img/logopollo.ico" type="image/x-icon">
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth-compat.js"></script>
+    <script src="../js/firebase-config.js"></script>
+    <script src="../js/user-comp.js"></script>
 </head>
 <body>
-  <div class="container">
-    <h1>Sobre Nosotros</h1>
-    <p>...</p>
-  </div>
+
+    <header class="top-header">
+        <div class="logo">
+            <img src="../assets/img/logopollo.jpg" alt="LogoPolloGames">
+        </div>
+        <nav>
+            <ul> 
+                <li><a href="games.html">Juegos de Prueba</a></li>
+                <li><a href="infoempresa.html">Acerca de Nosotros</a></li>
+                <li><a href="contact.html">Contacto</a></li>
+                <li class="profile-link"><a href="user.html" aria-label="Perfil de usuario"></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-content">
+        <h1>¿Quienes somos?</h1>
+        <div class="acerca_de-grid">
+          <div class="info-card">
+              <h2>Misión</h2>
+              <p> Mostrar nuestro trabajo de manera transparente, recibir feedback constructivo y construir una comunidad de jugadores y creadores que nos acompañen en nuestro viaje como desarrolladores. Queremos que nuestros proyectos no solo sean juegos, sino experiencias compartidas.</p>
+              <img src="/assets/img/mision.png" alt="foto de mision">
+              
+          </div>
+          <div class="info-card">
+              <h2>Visión</h2>
+              <img id="vision-img" src="/assets/img/vision.jpg" alt="">
+              <p>Ser reconocidos como un equipo de desarrolladores que innova, escucha a su comunidad y crea experiencias únicas. Queremos que PolloGames sea un referente de transparencia y calidad en el mundo de los videojuegos.</p>
+          </div>
+
+          <div class="info-card">
+              <h2>Nuestra historia</h2>
+              <p>En un humilde corral digital nació Pollo Games, cuando un nuevo pollo decidió dejar de picotear semillas y salió del cascarón para picotear botones de teclado para crear una plataforma de juegos.</p>
+              <img src="/assets/img/baby.jpg" alt="foto de un pollo bebe">
+          </div>
+
+        </div>
+    </div>
+
 </body>
 </html>

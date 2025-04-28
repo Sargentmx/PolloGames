@@ -4,68 +4,533 @@ body {
   margin: 0;
   padding: 0;
   background-color: #000000;
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Orbitron', sans-serif; 
   color: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
 }
 
-.container {
-  background-color: #0d0d0d;
-  border: 2px solid #00bcd4;
-  border-radius: 16px;
-  padding: 40px;
-  width: 80%;
-  max-width: 400px;
-  box-shadow: 0 0 12px #00bcd4, 0 0 30px #00bcd4 inset;
+/*Contenedor de barra de nav*/
+.top-header {
+  display: flex; 
+  align-items: center; 
+  background-color: #0d0d0d; 
+  padding: 5px 20px; 
+  border-bottom: 2px solid #00bcd4; 
+  box-shadow: 0 2px 8px rgba(0, 234, 255, 0.4); 
+  height: 80px; 
 }
 
-h1 {
-  margin-bottom: 30px;
-  font-size: 2em;
-  text-align: center;
-  color: #00eaff;
-  text-shadow: 0 0 8px #00eaff;
+
+.logo {
+  
+  padding-right: 20px; 
+  flex-shrink: 0; 
 }
 
-input, textarea {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  background-color: #111;
-  border: 1px solid #00bcd4;
-  border-radius: 8px;
-  color: #00ffff;
+/* Estilos para la imagen del logo */
+.logo img {
+  max-height: 80px; 
+  width: auto; 
+  display: block; 
 }
 
-input:focus, textarea:focus {
-  outline: none;
-  border-color: #00eaff;
-  box-shadow: 0 0 8px #00eaff;
-}
 
-button {
-  padding: 12px;
+nav {
+  flex-grow: 1; 
+  
+  background: none;
   border: none;
-  border-radius: 8px;
-  background: #00eaff;
-  color: #000;
-  font-weight: bold;
-  font-size: 1em;
+  box-shadow: none;
+  height: 100%; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+}
+
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center; 
+
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  width: 100%; 
+  height: 100%; 
+}
+
+
+nav ul li {
+  display: inline-block;
+  margin: 0 15px; 
+}
+
+
+nav ul li a {
+  color: #00eaff;
+  text-decoration: none;
+  font-size: 1.1em;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  line-height: normal; 
+}
+
+/* Hover barra nav */
+nav ul li a:hover {
+  color: #ffffff;
+  background-color: #00bcd4;
+  text-shadow: 0 0 5px #ffffff;
+}
+
+nav ul li.profile-link {
+  margin-left: 10%; 
+  margin-right: 0; 
+  
+}
+
+
+nav ul li.profile-link a {
+  display: flex;               /* Alinea bien el contenido */
+  align-items: center;          /* Centrado vertical */
+  justify-content: center;      /* Centrado horizontal */
+  width: 50px;                  /* Un poco más grande para verse mejor */
+  height: 50px;
+  border-radius: 50%;           /* Hace el elemento perfectamente circular */
+  text-decoration: none;
   cursor: pointer;
+
+  background-image: url('../assets/img/pfpchicken.jpg'); /* Corrijo ruta si es necesario */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border: 2px solid #00eaff;
+  overflow: hidden;             /* Importante: fuerza que nada se desborde del círculo */
+  box-shadow: 0 0 8px rgba(0, 238, 255, 0.5); /* Glow leve futurista */
+  
   transition: all 0.3s ease;
 }
 
-button:hover {
-  background: #00bcd4;
-  box-shadow: 0 0 10px #00eaff;
+nav ul li.profile-link a:hover {
+  border-color: #ffffff;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.7);
 }
 
-a {
-  color: #00eaff;
+/* Contenido de la pag */
+.main-content {
+  padding: 30px; /* Espacio alrededor del contenido */
   text-align: center;
-  display: block;
+}
+
+.main-content h1 {
+  color: #00eaff;
+  text-shadow: 0 0 8px #00eaff;
+  margin-bottom: 15px;
+}
+
+.main-content p {
+  color: #cccccc;
+  font-size: 1.1em;
+}
+
+
+
+/*-----------------------apartado de juegos de prueba------------------*/
+/* Grid de Juegos */
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  gap: 25px; 
+  padding: 20px; 
+}
+
+/* Tarjeta de Juego Individual */
+.game-card {
+  background-color: #1a1a1a;
+  border: 1px solid #00bcd4;
+  border-radius: 10px;
+  padding: 15px; 
+  text-align: center;
+  box-shadow: 0 0 8px rgba(0, 234, 255, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; /* Muy importante para el contenedor de media */
+}
+
+.game-card:hover {
+  transform: translateY(-5px); 
+  box-shadow: 0 0 15px rgba(0, 234, 255, 0.8);
+}
+
+/* Contenedor de Media (Imagen y Video) */
+.media-container {
+    position: relative; 
+    width: 100%;
+    height: 150px; /* AJUSTA ESTA ALTURA como necesites */
+    margin-bottom: 15px; 
+    background-color: #111; 
+    overflow: hidden; 
+    border-radius: 5px; 
+}
+
+/* Estilos Comunes para Imagen y Video dentro del Contenedor */
+.media-container img,
+.media-container video {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block; 
+    transition: opacity 0.4s ease-in-out; /* Transición un poco más suave */
+    border-radius: 5px; 
+    
+}
+
+
+/* Video inicialmente oculto */
+.game-video {
+    opacity: 0;
+    z-index: 1; 
+}
+
+/* Imagen inicialmente visible */
+.game-image {
+    opacity: 1;
+    z-index: 2; 
+}
+
+/* Efecto Hover para mostrar video */
+.game-card:hover .game-image {
+    opacity: 0; 
+    
+}
+
+.game-card:hover .game-video {
+    opacity: 1; 
+    z-index: 2;
+}
+
+/* Título, Descripción y Botón dentro de la Tarjeta */
+.game-card h3 {
+    color: #00eaff;
+    margin-top: 0; /* El espacio ya lo da media-container */
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+.game-card p {
+    font-size: 0.9em;
+    color: #cccccc;
+    margin-bottom: 15px;
+    min-height: 3em; /* Mantiene un espacio consistente */
+    line-height: 1.4; /* Mejora legibilidad */
+}
+
+.game-card .play-button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #00eaff;
+    color: #000;
+    font-weight: bold;
+    font-size: 1em;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-top: auto; /* Empuja el botón hacia abajo si la tarjeta crece */
+}
+
+.game-card .play-button:hover {
+    background: #00bcd4;
+    box-shadow: 0 0 10px #00eaff;
+    color: #fff;
+}
+
+
+
+
+.catalog-rating {
   margin-top: 10px;
+  font-size: 0.9em;
+  color: #ccc; 
+  display: flex; /* Opcional: para alinear mejor */
+  align-items: center; /* Opcional: alinear verticalmente */
+  gap: 5px; /* Opcional: espacio entre elementos */
+  justify-content: center; /* Opcional: centrar contenido */
+}
+
+.catalog-rating .rating-label { /* Estilo para la etiqueta "Rating:" si la añadiste */
+  /* Tus estilos */
+  color: white;
+}
+
+.catalog-rating .avg-rating-value {
+  font-weight: bold;
+  color: #FFC107; /* Puedes darle un color destacado si quieres */
+}
+
+.catalog-rating .rating-count {
+  font-size: 0.9em; /* Hacer el contador un poco más pequeño */
+  color: #aaa; 
+}
+/*------------------------apartado de acerca de nosotros-------------------------------------*/
+
+
+/* --- Estilos del Grid "Acerca de" --- */
+.acerca_de-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Ancho mínimo un poco mayor */
+    gap: 30px; /* Un poco más de espacio */
+    padding: 20px; 
+  }
+  
+  /* --- Tarjeta de Información --- */
+  .info-card {
+    background-color: #1a1a1a; /* Fondo oscuro */
+    border: 1px solid #00bcd4; /* Borde cian */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px; /* Más padding interno */
+    box-shadow: 0 0 8px rgba(0, 234, 255, 0.5); /* Sombra cian */
+    display: flex;
+    flex-direction: column;
+    /* NUEVO: Transición suave para el hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease; 
+    /* NUEVO: Propiedades para la animación de entrada */
+    opacity: 0; /* Empieza invisible */
+    transform: translateY(20px); /* Empieza ligeramente desplazada hacia abajo */
+    /* Asigna la animación 'fadeInUp', duración, timing-function y fill-mode */
+    animation: fadeInUp 0.6s ease-out forwards; 
+  }
+  
+  /* NUEVO: Añadir retrasos escalonados a las tarjetas para que no aparezcan todas a la vez */
+  .acerca_de-grid .info-card:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  .acerca_de-grid .info-card:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .acerca_de-grid .info-card:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  /* Añade más nth-child si tienes más tarjetas */
+  
+  
+  /* NUEVO: Keyframes para la animación de entrada */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* NUEVO: Efecto Hover mejorado */
+  .info-card:hover {
+    transform: translateY(-5px) scale(1.02); /* Levanta y agranda ligeramente */
+    box-shadow: 0 0 15px rgba(0, 234, 255, 0.8); /* Sombra más intensa */
+    border-color: #00faff; /* Borde un poco más brillante */
+    /* background-color: #2a2a2a; */ /* Opcional: fondo ligeramente más claro */
+  }
+  
+  
+  /* --- Contenido dentro de la tarjeta --- */
+  .info-card h2 {
+    color: #D3D3D3; /* Gris claro para subtítulos */
+    text-shadow: 0 0 5px rgba(0, 234, 255, 0.8); /* Sombra cian más sutil */
+    margin-bottom: 15px; /* Espacio debajo del título */
+    /* NUEVO: Transición para posible efecto hover en el futuro */
+    transition: color 0.3s ease; 
+  }
+  
+  /* Opcional: Hacer el h2 más brillante al pasar sobre la tarjeta */
+   .info-card:hover h2 {
+     color: #ffffff; 
+     text-shadow: 0 0 8px rgba(0, 234, 255, 1);
+  } 
+  
+  .info-card p {
+    color: #E0E0E0; /* Blanco un poco menos intenso que el blanco puro */
+    text-align: justify; /* Texto justificado */
+    margin: 15px 0; /* Margen vertical ajustado (quitados márgenes laterales) */
+    line-height: 1.6; /* Mejorar espaciado entre líneas */
+    flex-grow: 1; /* Permite que el párrafo ocupe espacio vertical si es necesario */
+  }
+  
+  .info-card img {
+    max-width: 80%; /* Ancho máximo relativo al contenedor */
+    width: auto; /* Mantiene proporción si es más pequeño que 80% */
+    max-height: 150px; /* Altura máxima para evitar imágenes muy grandes */
+    height: auto; /* Mantiene proporción */
+    align-self: center; /* Centra la imagen horizontalmente */
+    margin-top: auto; /* Empuja la imagen hacia abajo si hay espacio extra */
+    padding-top: 15px; /* Espacio entre el texto y la imagen */
+    border-radius: 5px; /* Bordes redondeados sutiles para la imagen */
+     /* NUEVO: Transición para posible efecto hover */
+    transition: transform 0.3s ease;
+  }
+  
+   
+   .info-card:hover img {
+    transform: scale(1.1);
+  } 
+  
+  /*------feedback--------*/
+  
+#feedback-section{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+.rating-stars {
+  margin-bottom: 15px; /* Espacio debajo de las estrellas */
+}
+
+.rating-stars .star {
+  font-size: 2em; /* Tamaño de las estrellas */
+  color: #ccc;   /* Color inicial (vacías) */
+  cursor: pointer; /* Cursor de mano */
+  transition: color 0.2s ease; /* Transición suave de color */
+  margin-right: 5px; /* Espacio entre estrellas */
+}
+
+/* Estilo al pasar el cursor sobre una estrella Y las anteriores */
+.rating-stars:hover .star {
+  color: #FFD700; /* Amarillo dorado al pasar cursor */
+}
+/* Mantiene el color original en las estrellas posteriores a la que tiene el cursor encima */
+.rating-stars .star:hover ~ .star {
+  color: #ccc; 
+}
+
+/* Estilo para las estrellas seleccionadas (añadiremos clase 'selected' con JS) */
+.rating-stars .star.selected {
+  color: #FFC107; /* Amarillo más intenso para seleccionadas */
+}
+/* Mantiene el color de las seleccionadas aunque el cursor esté encima de otras */
+.rating-stars .star.selected ~ .star {
+    color: #ccc; /* Las posteriores a la seleccionada vuelven a gris */
+}
+
+/* Estilos para el textarea y botón (opcional, ajústalos a tu diseño) */
+#comment-input {
+    
+    width: 100%; /* O un ancho fijo */
+    max-width: 500px; /* Limitar ancho máximo */
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #00bcd4; /* Borde cian como tus otros elementos */
+    border-radius: 5px;
+    background-color: #1a1a1a; /* Fondo oscuro */
+    color: #ffffff; /* Texto blanco */
+    font-family: inherit; /* Usar la fuente del body */
+    
+}
+
+#send-feedback-btn {
+    /* Copia estilos de tus otros botones o ajústalos */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #00eaff; /* Cian */
+    color: #000; /* Texto negro */
+    font-weight: bold;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 25%;
+
+}
+
+#send-feedback-btn:hover {
+    background: #00bcd4; /* Cian más oscuro */
+    box-shadow: 0 0 10px #00eaff;
+    color: #fff; /* Texto blanco */
+}
+
+/* Estilos para mensajes de feedback */
+#feedback-message.success {
+  color: #4CAF50; /* Verde */
+  font-weight: bold;
+}
+
+#feedback-message.error {
+  color: #F44336; /* Rojo */
+  font-weight: bold;
+}
+
+
+/*-------css de contacto---------*/
+
+#correos{
+  display: flex;
+  flex-direction: column;
+  gap:15px;
+}
+
+.contact-info, .location-info {
+  margin-top: 30px; /* Espacio entre secciones */
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: rgba(204, 204, 204, 0.1); /* Un fondo sutil para separar */
+  border-radius: 8px;
+  border: 1px solid #00bcd4; /* Borde con el color de tu tema */
+}
+
+.contact-info h2, .location-info h2 {
+  color: #00eaff; /* Título de sección con tu color principal */
+  text-shadow: 0 0 6px #00eaff;
+  margin-bottom: 15px;
+}
+
+.contact-info p, .location-info p {
+  color: #cccccc; /* Color de texto general */
+  font-size: 1.1em; /* Tamaño de fuente consistente */
+  line-height: 1.6; /* Espaciado de línea */
+  margin-bottom: 10px; /* Espacio debajo de cada párrafo */
+}
+
+.contact-info a {
+  color: #00bcd4; /* Color de enlace */
+  text-decoration: none; /* Sin subrayado */
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: #ffffff; /* Cambio de color al pasar el ratón */
+  text-decoration: underline;
+}
+
+/* Contenedor del mapa para hacerlo responsivo */
+.map-container {
+position: relative;
+overflow: hidden;
+/* Proporción 16:9 (ajusta 'padding-top' si necesitas otra proporción) */
+/* Para 4:3 usa 75% */
+padding-top: 56.25%;
+margin-top: 20px; /* Espacio sobre el mapa */
+margin-bottom: 20px; /* Espacio debajo del mapa */
+border: 1px solid #00bcd4; /* Borde opcional */
+border-radius: 5px; /* Bordes redondeados opcionales */
+}
+
+.map-container iframe {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+border: 0; /* Quitar borde del iframe */
+}
+
+/* Asegurarse que los estilos generales no interfieran negativamente */
+.main-content .location-info p {
+  margin-top: 15px; /* Espacio entre el mapa y la dirección escrita */
 }
