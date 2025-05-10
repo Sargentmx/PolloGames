@@ -2,32 +2,37 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>PolloGames - Inicio</title>
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="icon" href="../img/logopollo.ico" type="image/x-icon">
+    <title>Menú principal - PolloGames</title>
+    <link rel="stylesheet" href="/css/main.css"> 
+    <link rel="icon" href="../assets/img/logopollo.ico" type="image/x-icon">
     <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth-compat.js"></script>
     <script src="../js/firebase-config.js"></script>
     <script src="../js/user-comp.js"></script>
+    <script type="module" src="../js/video.js"></script>
+    <script type="module" src="../js/catalog.js"></script>
+    <script type="module" src="../js/anim-menu.js"></script>
+    
 </head>
 <body>
     <header class="top-header">
         <div class="logo">
-            <img src="../assets/img/logopollo.jpg" alt="LogoPolloGames">
+            <a href="main.html"><img src="../assets/img/logopollo.jpg" alt="LogoPolloGames"></a>
         </div>
         <nav>
-            <ul> 
-                <li><a href="games.html">Juegos de Prueba</a></li>
-                <li><a href="infoempresa.html">Acerca de Nosotros</a></li>
-                <li><a href="contact.html">Contacto</a></li>
-                <li class="profile-link"><a href="user.html" aria-label="Perfil de usuario"></a></li>
-            </ul>
+          <ul> 
+            <li><a href="games.html">Juegos de Prueba</a></li>
+            <li><a href="infoempresa.html">Acerca de Nosotros</a></li>
+            <li><a href="contact.html">Contacto</a></li>
+            <li class="profile-link"><a href="user.html" aria-label="Perfil de usuario"></a></li>
+          </ul>
         </nav>
-      </header>
+      </header>   
+    <canvas id="matrixcanvas"></canvas>
     <div class="main-content">
         <h1>Bienvenido a PolloGames</h1>
         <p>¡Explora nuestra selección de juegos!</p>
+        <img id="chickengamer" src="../assets/img/chickengamer.jpg" alt="">
     </div>
-
 </body>
 </html>

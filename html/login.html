@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Login - PolloGames</title>
   <link rel="stylesheet" href="../css/login.css">
-  <link rel="icon" href="../img/logopollo.ico" type="image/x-icon">
+  <link rel="icon" href="../assets/img/logopollo.ico" type="image/x-icon">
   <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth-compat.js"></script>
   <script src="../js/firebase-config.js"></script>
@@ -31,6 +31,17 @@
       <a href="register.html">¿No tienes cuenta? Regístrate</a>
     </form>
   </div>
+
   <div id="recaptcha-container"></div>
+
+  <div id="mfaModal">
+    <div>
+      <p>Hemos enviado un código de verificación a tu teléfono.</p>
+      <input id="codeInput" type="text" placeholder="Código SMS" />
+      <br><br>
+      <button id="verifyBtn">Verificar código</button>
+      <p id="mfaError" style="color: red;"></p>
+    </div>
+  </div>
 </body>
 </html>

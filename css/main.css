@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 
+
 body {
   margin: 0;
   padding: 0;
@@ -92,30 +93,42 @@ nav ul li.profile-link {
 
 
 nav ul li.profile-link a {
-  display: flex;               /* Alinea bien el contenido */
-  align-items: center;          /* Centrado vertical */
-  justify-content: center;      /* Centrado horizontal */
-  width: 50px;                  /* Un poco más grande para verse mejor */
-  height: 50px;
-  border-radius: 50%;           /* Hace el elemento perfectamente circular */
-  text-decoration: none;
+  display: block;            /*Pfp redondo*/
+  width: 40px;               
+  height: 40px;              
+  border-radius: 50%;        
+  text-decoration: none;     
   cursor: pointer;
-
-  background-image: url('../assets/img/pfpchicken.jpg'); /* Corrijo ruta si es necesario */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  border: 2px solid #00eaff;
-  overflow: hidden;             /* Importante: fuerza que nada se desborde del círculo */
-  box-shadow: 0 0 8px rgba(0, 238, 255, 0.5); /* Glow leve futurista */
   
-  transition: all 0.3s ease;
+  /*imagen de fondo */
+  background-image: url('../assets/img/pfpchicken.jpg'); 
+  background-size: cover;        
+  background-position: center center; 
+  background-repeat: no-repeat;   
+  border: 2px solid #00eaff; 
+  
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; 
 }
 
+/* Efecto hover para el círculo de perfil */
 nav ul li.profile-link a:hover {
-  border-color: #ffffff;
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.7);
+  background-color: #00eaff; 
+  border-color: #ffffff;    
+  box-shadow: 0 0 10px rgba(0, 234, 255, 0.7); 
+}
+
+#matrixcanvas{
+  display:block;
+  width: 100%;
+  height:100%;
+  position: fixed;
+  z-index: -1;
+  
+}
+
+#chickengamer{
+  height:300px;
+
 }
 
 /* Contenido de la pag */
@@ -167,7 +180,7 @@ nav ul li.profile-link a:hover {
 .media-container {
     position: relative; 
     width: 100%;
-    height: 150px; /* AJUSTA ESTA ALTURA como necesites */
+    height: 200px; /* AJUSTA ESTA ALTURA como necesites */
     margin-bottom: 15px; 
     background-color: #111; 
     overflow: hidden; 
@@ -257,24 +270,24 @@ nav ul li.profile-link a:hover {
   margin-top: 10px;
   font-size: 0.9em;
   color: #ccc; 
-  display: flex; /* Opcional: para alinear mejor */
-  align-items: center; /* Opcional: alinear verticalmente */
-  gap: 5px; /* Opcional: espacio entre elementos */
-  justify-content: center; /* Opcional: centrar contenido */
+  display: flex; 
+  align-items: center; 
+  gap: 5px; 
+  justify-content: center; 
 }
 
-.catalog-rating .rating-label { /* Estilo para la etiqueta "Rating:" si la añadiste */
+.catalog-rating .rating-label { 
   /* Tus estilos */
   color: white;
 }
 
 .catalog-rating .avg-rating-value {
   font-weight: bold;
-  color: #FFC107; /* Puedes darle un color destacado si quieres */
+  color: #FFC107; 
 }
 
 .catalog-rating .rating-count {
-  font-size: 0.9em; /* Hacer el contador un poco más pequeño */
+  font-size: 0.9em; 
   color: #aaa; 
 }
 /*------------------------apartado de acerca de nosotros-------------------------------------*/
@@ -283,30 +296,30 @@ nav ul li.profile-link a:hover {
 /* --- Estilos del Grid "Acerca de" --- */
 .acerca_de-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Ancho mínimo un poco mayor */
-    gap: 30px; /* Un poco más de espacio */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 30px; 
     padding: 20px; 
   }
   
   /* --- Tarjeta de Información --- */
   .info-card {
-    background-color: #1a1a1a; /* Fondo oscuro */
-    border: 1px solid #00bcd4; /* Borde cian */
-    border-radius: 10px; /* Bordes redondeados */
-    padding: 20px; /* Más padding interno */
-    box-shadow: 0 0 8px rgba(0, 234, 255, 0.5); /* Sombra cian */
+    background-color: #1a1a1a; 
+    border: 1px solid #00bcd4; 
+    border-radius: 10px; 
+    padding: 20px; 
+    box-shadow: 0 0 8px rgba(0, 234, 255, 0.5); 
     display: flex;
     flex-direction: column;
-    /* NUEVO: Transición suave para el hover */
+    
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease; 
-    /* NUEVO: Propiedades para la animación de entrada */
-    opacity: 0; /* Empieza invisible */
-    transform: translateY(20px); /* Empieza ligeramente desplazada hacia abajo */
-    /* Asigna la animación 'fadeInUp', duración, timing-function y fill-mode */
+    
+    opacity: 0; 
+    transform: translateY(20px); 
+    
     animation: fadeInUp 0.6s ease-out forwards; 
   }
   
-  /* NUEVO: Añadir retrasos escalonados a las tarjetas para que no aparezcan todas a la vez */
+  
   .acerca_de-grid .info-card:nth-child(1) {
     animation-delay: 0.1s;
   }
@@ -316,10 +329,10 @@ nav ul li.profile-link a:hover {
   .acerca_de-grid .info-card:nth-child(3) {
     animation-delay: 0.3s;
   }
-  /* Añade más nth-child si tienes más tarjetas */
+
   
   
-  /* NUEVO: Keyframes para la animación de entrada */
+  /* animacion entrada */
   @keyframes fadeInUp {
     from {
       opacity: 0;
@@ -331,48 +344,48 @@ nav ul li.profile-link a:hover {
     }
   }
   
-  /* NUEVO: Efecto Hover mejorado */
+  
   .info-card:hover {
-    transform: translateY(-5px) scale(1.02); /* Levanta y agranda ligeramente */
-    box-shadow: 0 0 15px rgba(0, 234, 255, 0.8); /* Sombra más intensa */
-    border-color: #00faff; /* Borde un poco más brillante */
-    /* background-color: #2a2a2a; */ /* Opcional: fondo ligeramente más claro */
+    transform: translateY(-5px) scale(1.02); 
+    box-shadow: 0 0 15px rgba(0, 234, 255, 0.8); 
+    border-color: #00faff; 
+    
   }
   
   
   /* --- Contenido dentro de la tarjeta --- */
   .info-card h2 {
-    color: #D3D3D3; /* Gris claro para subtítulos */
-    text-shadow: 0 0 5px rgba(0, 234, 255, 0.8); /* Sombra cian más sutil */
-    margin-bottom: 15px; /* Espacio debajo del título */
-    /* NUEVO: Transición para posible efecto hover en el futuro */
+    color: #D3D3D3; 
+    text-shadow: 0 0 5px rgba(0, 234, 255, 0.8); 
+    margin-bottom: 15px; 
+    
     transition: color 0.3s ease; 
   }
   
-  /* Opcional: Hacer el h2 más brillante al pasar sobre la tarjeta */
+  
    .info-card:hover h2 {
      color: #ffffff; 
      text-shadow: 0 0 8px rgba(0, 234, 255, 1);
   } 
   
   .info-card p {
-    color: #E0E0E0; /* Blanco un poco menos intenso que el blanco puro */
-    text-align: justify; /* Texto justificado */
-    margin: 15px 0; /* Margen vertical ajustado (quitados márgenes laterales) */
-    line-height: 1.6; /* Mejorar espaciado entre líneas */
-    flex-grow: 1; /* Permite que el párrafo ocupe espacio vertical si es necesario */
+    color: #E0E0E0; 
+    text-align: justify; 
+    margin: 15px 0; 
+    line-height: 1.6; 
+    flex-grow: 1; 
   }
   
   .info-card img {
-    max-width: 80%; /* Ancho máximo relativo al contenedor */
-    width: auto; /* Mantiene proporción si es más pequeño que 80% */
-    max-height: 150px; /* Altura máxima para evitar imágenes muy grandes */
-    height: auto; /* Mantiene proporción */
-    align-self: center; /* Centra la imagen horizontalmente */
-    margin-top: auto; /* Empuja la imagen hacia abajo si hay espacio extra */
-    padding-top: 15px; /* Espacio entre el texto y la imagen */
-    border-radius: 5px; /* Bordes redondeados sutiles para la imagen */
-     /* NUEVO: Transición para posible efecto hover */
+    max-width: 80%; 
+    width: auto; 
+    max-height: 150px; 
+    height: auto; 
+    align-self: center; 
+    margin-top: auto; 
+    padding-top: 15px; 
+    border-radius: 5px; 
+    
     transition: transform 0.3s ease;
   }
   
@@ -380,6 +393,8 @@ nav ul li.profile-link a:hover {
    .info-card:hover img {
     transform: scale(1.1);
   } 
+
+
   
   /*------feedback--------*/
   
@@ -390,36 +405,36 @@ nav ul li.profile-link a:hover {
   
 }
 .rating-stars {
-  margin-bottom: 15px; /* Espacio debajo de las estrellas */
+  margin-bottom: 15px; 
 }
 
 .rating-stars .star {
-  font-size: 2em; /* Tamaño de las estrellas */
-  color: #ccc;   /* Color inicial (vacías) */
-  cursor: pointer; /* Cursor de mano */
-  transition: color 0.2s ease; /* Transición suave de color */
-  margin-right: 5px; /* Espacio entre estrellas */
+  font-size: 2em; 
+  color: #ccc;   
+  cursor: pointer; 
+  transition: color 0.2s ease; 
+  margin-right: 5px; 
 }
 
-/* Estilo al pasar el cursor sobre una estrella Y las anteriores */
+/* Cursor sobre una estrella */
 .rating-stars:hover .star {
-  color: #FFD700; /* Amarillo dorado al pasar cursor */
+  color: #FFD700; 
 }
-/* Mantiene el color original en las estrellas posteriores a la que tiene el cursor encima */
+
 .rating-stars .star:hover ~ .star {
   color: #ccc; 
 }
 
-/* Estilo para las estrellas seleccionadas (añadiremos clase 'selected' con JS) */
+
 .rating-stars .star.selected {
-  color: #FFC107; /* Amarillo más intenso para seleccionadas */
-}
-/* Mantiene el color de las seleccionadas aunque el cursor esté encima de otras */
-.rating-stars .star.selected ~ .star {
-    color: #ccc; /* Las posteriores a la seleccionada vuelven a gris */
+  color: #FFC107; 
 }
 
-/* Estilos para el textarea y botón (opcional, ajústalos a tu diseño) */
+.rating-stars .star.selected ~ .star {
+    color: #ccc; 
+}
+
+
 #comment-input {
     
     width: 100%; /* O un ancho fijo */
@@ -476,49 +491,48 @@ nav ul li.profile-link a:hover {
 }
 
 .contact-info, .location-info {
-  margin-top: 30px; /* Espacio entre secciones */
+  margin-top: 30px; 
   margin-bottom: 30px;
   padding: 20px;
-  background-color: rgba(204, 204, 204, 0.1); /* Un fondo sutil para separar */
+  background-color: rgba(204, 204, 204, 0.1); 
   border-radius: 8px;
-  border: 1px solid #00bcd4; /* Borde con el color de tu tema */
+  border: 1px solid #00bcd4; 
 }
 
 .contact-info h2, .location-info h2 {
-  color: #00eaff; /* Título de sección con tu color principal */
+  color: #00eaff; 
   text-shadow: 0 0 6px #00eaff;
   margin-bottom: 15px;
 }
 
 .contact-info p, .location-info p {
-  color: #cccccc; /* Color de texto general */
-  font-size: 1.1em; /* Tamaño de fuente consistente */
-  line-height: 1.6; /* Espaciado de línea */
-  margin-bottom: 10px; /* Espacio debajo de cada párrafo */
+  color: #cccccc; 
+  font-size: 1.1em; 
+  line-height: 1.6; 
+  margin-bottom: 10px; 
 }
 
 .contact-info a {
-  color: #00bcd4; /* Color de enlace */
-  text-decoration: none; /* Sin subrayado */
+  color: #00bcd4; 
+  text-decoration: none; 
   transition: color 0.3s ease;
 }
 
 .contact-info a:hover {
-  color: #ffffff; /* Cambio de color al pasar el ratón */
+  color: #ffffff; 
   text-decoration: underline;
 }
 
-/* Contenedor del mapa para hacerlo responsivo */
+/* Contenedor del mapa  */
 .map-container {
 position: relative;
 overflow: hidden;
-/* Proporción 16:9 (ajusta 'padding-top' si necesitas otra proporción) */
-/* Para 4:3 usa 75% */
+
 padding-top: 56.25%;
-margin-top: 20px; /* Espacio sobre el mapa */
-margin-bottom: 20px; /* Espacio debajo del mapa */
-border: 1px solid #00bcd4; /* Borde opcional */
-border-radius: 5px; /* Bordes redondeados opcionales */
+margin-top: 20px; 
+margin-bottom: 20px; 
+border: 1px solid #00bcd4; 
+border-radius: 5px; 
 }
 
 .map-container iframe {
@@ -527,10 +541,108 @@ top: 0;
 left: 0;
 width: 100%;
 height: 100%;
-border: 0; /* Quitar borde del iframe */
+border: 0; 
 }
 
-/* Asegurarse que los estilos generales no interfieran negativamente */
+
 .main-content .location-info p {
-  margin-top: 15px; /* Espacio entre el mapa y la dirección escrita */
+  margin-top: 15px; 
 }
+
+/* Estilos para el contenedor redimensionable */
+#unity-container {
+  position: relative;
+  resize: both;
+  overflow: hidden;
+  cursor: se-resize; /* Cambiar el cursor cuando el usuario pasa sobre la esquina para redimensionar */
+  width: 720px;
+  height: 450px;
+}
+
+/* Estilos para el botón de "Terminar partida" */
+#end-game-btn {
+  position: absolute;
+  top: 5px; /* Ajustado para que esté más arriba */
+  right: 15px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid #fff;
+  color: white;
+  font-size: 16px;
+  padding: 4px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+/* Hover en el botón: color cian */
+#end-game-btn:hover {
+  background-color: #00ffff;
+  color: #000;
+  border-color: #00ffff;
+}
+
+/* Estilos para el botón de cerrar la ventana de comentarios */
+#close-feedback-btn {
+  cursor: pointer;
+  font-size: 30px;
+  color: #00eaff;
+  transition: color 0.3s ease;
+  background: transparent; 
+  border: 1px solid #ff5252; 
+  color: #ff5252; 
+  padding: 10px 20px; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  font-size: 16px;
+}
+
+#close-feedback-btn:hover {
+  color: #ffffff;
+}
+
+.search-container {
+  position: relative;
+  margin: 20px auto;
+  max-width: 500px;
+  text-align: center;
+}
+
+#searchInput {
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  background-color: #1a1a2e;
+  color: #00ffff;
+  box-shadow: 0 0 10px #00ffff33;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.suggestions-dropdown {
+  position: absolute;
+  top: calc(100% + 5px); /* Un pequeño espacio debajo del input */
+  left: 0;
+  width: 100%;
+  background-color: #0f0f1a;
+  border: 1px solid #00ffff33;
+  border-radius: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+.suggestions-dropdown div {
+  padding: 10px;
+  cursor: pointer;
+  color: #ffffff;
+  text-align: center;
+}
+
+.suggestions-dropdown div:hover {
+  background-color: #00ffff22;
+}
+

@@ -78,3 +78,59 @@ a {
   display: block;
   margin-top: 10px;
 }
+
+#mfaModal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#mfaModal > div {
+  background: #0a0a0a;
+  border: 2px solid #00ffff;
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 0 20px #00ffff, 0 0 40px #00ccff inset;
+  color: #00ffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#mfaModal input {
+  background-color: #000;
+  border: 1px solid #00ffff;
+  color: #00ffff;
+  padding: 10px;
+  border-radius: 8px;
+  width: 80%;
+  margin-top: 10px;
+  text-align: center;
+}
+
+#mfaModal input::placeholder {
+  color: #00cccc;
+}
+
+#mfaModal button {
+  background-color: #000;
+  color: #00ffff;
+  border: 2px solid #00ffff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#mfaModal button:hover {
+  background-color: #00ffff;
+  color: #000;
+  box-shadow: 0 0 10px #00ffff, 0 0 20px #00ccff;
+}

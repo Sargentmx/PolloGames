@@ -15,6 +15,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const currentGameId = getGameIdFromUrl();
     let currentRating = 0;
 
+    function moderateComment(commentText) {
+        const badWords = ["malo", "tonto", "estúpido", "idiota", "imbécil", "mierda", "pendejo", "gilipollas"];  
+        const lowerText = commentText.toLowerCase(); 
+        const containsBadWord = badWords.some(word => lowerText.includes(word));
+
+        return containsBadWord;
+    }
+
     if (!starsContainer || !stars || !ratingInput || !commentInput || !sendButton || !feedbackMessage) {
         console.warn("Faltan elementos de feedback.");
         return;
@@ -46,6 +54,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const commentText = commentInput.value.trim();
         const ratingValue = parseInt(ratingInput.value);
 
+        if (moderateComment(commentText)) {
+            feedbackMessage.textContent = 'El uso de malas palabras está prohibido.';
+            feedbackMessage.className = 'error';
+            return;
+        }
+
         if (ratingValue === 0 || commentText === '' || !currentGameId) {
             feedbackMessage.textContent = 'Por favor, completa la calificación y el comentario.';
             feedbackMessage.className = 'error';
@@ -63,11 +77,8 @@ document.addEventListener('DOMContentLoaded', () => {
         sendButton.disabled = true;
 
         try {
-            // Insertar nuevo feedback
             const gameRatingsRef = db.collection("games").doc(currentGameId).collection("ratings");
             await gameRatingsRef.add(feedbackData);
-
-            // Actualizar promedio y conteo
             const gameDocRef = db.collection("games").doc(currentGameId);
 
             await db.runTransaction(async (transaction) => {

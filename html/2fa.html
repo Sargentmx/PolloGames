@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Activar Verificación en 2 Pasos</title>
-  <link rel="stylesheet" href="../css/user.css">
-  <link rel="icon" href="../img/logopollo.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../css/user-general.css">
+  <link rel="icon" href="../assets/img/logopollo.ico" type="image/x-icon">
   <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth-compat.js"></script>
   <script src="../js/user-comp.js"></script>
@@ -14,7 +14,7 @@
 <body>
   <header class="top-header">
     <div class="logo">
-        <img src="../assets/img/logopollo.jpg" alt="LogoPolloGames">
+      <a href="main.html"><img src="../assets/img/logopollo.jpg" alt="LogoPolloGames"></a>
     </div>
     <nav>
         <ul> 
@@ -31,7 +31,6 @@
     <div style="text-align: center;">
       <button id="activate2FABtn">Activar 2FA</button>
     </div>
-    <!-- Modal para ingresar número de teléfono -->
     <div id="phoneModal" class="modal">
       <div class="modal-content">
         <h3>Ingresa tu número de teléfono</h3>
@@ -41,8 +40,6 @@
         <button id="cancelPhoneModalBtn">Cancelar</button>
       </div>
     </div>
-
-    <!-- Modal para ingresar el código recibido -->
     <div id="verificationModal" class="modal">
       <div class="modal-content">
         <h3>Ingresa el código recibido</h3>

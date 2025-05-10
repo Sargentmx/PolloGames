@@ -22,8 +22,6 @@ document.getElementById('cancelVerificationModalBtn').onclick = function() {
 
 function showPhoneModal() {
   document.getElementById('phoneModal').style.display = 'block';
-
-  // Inicializar el reCAPTCHA en el modal
   const appVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', {
     size: 'normal',
     callback: function(response) {
@@ -44,7 +42,6 @@ function sendCodeSMS() {
 
   const user = firebase.auth().currentUser;
 
-  // Asegurarse de que el appVerifier se esté pasando correctamente
   const appVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', {
     size: 'normal',
     callback: function(response) {

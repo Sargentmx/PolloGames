@@ -2,21 +2,23 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juego - PolloGames</title>
     <link rel="stylesheet" href="../css/main.css"> 
-    <link rel="icon" href="../img/logopollo.ico" type="image/x-icon">
+    <link rel="icon" href="../assets/img/logopollo.ico" type="image/x-icon">
     <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore-compat.js"></script>
     <script src="../js/firebase-config.js"></script>
     <script src="../js/user-comp.js"></script>
+    <script src="../js/gameIn.js" defer></script>
     <script src="../js/feedback.js" defer></script>
 </head>
 <body>
 
 <header class="top-header">
     <div class="logo">
-        <img src="../assets/img/logopollo.jpg" alt="LogoPolloGames">
+        <a href="main.html"><img src="../assets/img/logopollo.jpg" alt="LogoPolloGames"></a>
     </div>
     <nav>
         <ul> 
@@ -28,43 +30,42 @@
     </nav>
 </header>
 
-<div class="main-content">
-
-    <h2 style="color:#00eaff;">Nombre del Juego</h2>
-    <div id="unity-container" class="unity-desktop" style="width: 720px; height: 450px; margin: 20px auto;"> 
-        <canvas id="unity-canvas" style="width: 100%; height: 100%; background: #231F20"></canvas> 
-        <div id="unity-loading-bar" class="unity-loading-bar">
-            <div class="unity-logo"></div>
-            <div class="unity-progress-bar-empty">
-                <div class="unity-progress-bar-full"></div>
-            </div>
-        </div>
-        <div id="unity-warning"></div>
+<div class="main-content" style="padding: 30px 0;">
+    <div class="game-header" style="text-align: center; margin-bottom: 30px;">
+        <h2 id="game-title" style="color: #00eaff; margin-bottom: 10px;"></h2>
+        <p id="game-description" style="color: #ffffff; max-width: 800px; margin: 0 auto;"></p>
+    </div>
+    
+    <div style="width: 90%; max-width: 1000px; height: 750px; margin: 0 auto; position: relative; background: rgba(0,0,0,0.3); border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.3);">
+        <iframe id="game-iframe" frameborder="0" allowfullscreen style="width: 100%; height: 100%;"></iframe>
+        <button id="end-game-btn" style="position: absolute; top: 8px; right: 15px; background: rgba(0,0,0,0.5); border: 1px solid #fff; color: white; font-size: 16px; padding: 4px 10px; border-radius: 5px; cursor: pointer; z-index: 10;">Enviar comentarios</button>
     </div>
 
-    <hr style="border-color: #00bcd4; margin: 30px 0;">
+    <hr style="border-color: #00bcd4; margin: 40px auto; width: 80%;">
 
-    <div id="feedback-section">
-        <p>¡Gracias por jugar!</p>
-        <h2>Deja tu Opinión</h2>
+    <div id="feedback-section" style="display: none; max-width: 800px; margin: 0 auto; padding: 20px; background: rgba(0,0,0,0.2); border-radius: 10px;">
+        <h2 style="color: #00eaff; text-align: center; margin-bottom: 20px;">¡Gracias por jugar!</h2>
+        <h3 style="color: white; text-align: center; margin-bottom: 20px;">Deja tu Opinión</h3>
 
-        <div class="rating-stars">
-            <span>Calificación:</span>
-            <span class="star" data-value="1">&#9734;</span> 
-            <span class="star" data-value="2">&#9734;</span>
-            <span class="star" data-value="3">&#9734;</span>
-            <span class="star" data-value="4">&#9734;</span>
-            <span class="star" data-value="5">&#9734;</span>
+        <div class="rating-stars" style="text-align: center; margin-bottom: 20px;">
+            <span style="color: white; margin-right: 10px;">Calificación:</span>
+            <span class="star" data-value="1" style="cursor: pointer; font-size: 24px;">&#9734;</span> 
+            <span class="star" data-value="2" style="cursor: pointer; font-size: 24px;">&#9734;</span>
+            <span class="star" data-value="3" style="cursor: pointer; font-size: 24px;">&#9734;</span>
+            <span class="star" data-value="4" style="cursor: pointer; font-size: 24px;">&#9734;</span>
+            <span class="star" data-value="5" style="cursor: pointer; font-size: 24px;">&#9734;</span>
             <input type="hidden" id="rating-value" value="0"> 
         </div>
 
-        <textarea id="comment-input" placeholder="Escribe tu comentario aquí..." rows="3" cols="25"></textarea>
+        <div style="text-align: center;">
+            <textarea id="comment-input" placeholder="Escribe tu comentario aquí..." "></textarea>
+            <br><br>
+            <button id="send-feedback-btn">Enviar Comentario</button>
+            <button id="close-feedback-btn">Cancelar</button>
+        </div>
 
-        <button id="send-feedback-btn">Enviar Comentario</button>
-
-        <p id="feedback-message" style="margin-top: 10px;"></p> 
+        <p id="feedback-message" style="margin-top: 20px; text-align: center; color: #4caf50;"></p> 
     </div>
-
 </div>
 
 </body>
